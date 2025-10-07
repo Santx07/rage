@@ -6,7 +6,7 @@ import simpleGit from 'simple-git'
 
 const handler = async (m, { conn, args, usedPrefix, command }) => {
     createDataBase() // crea un archivo database por si este no existe 
-    atualizarRepositorio() // Verificar si necesita actualizar, consultando la api en https://github.com/jeffersonalionco/database-galaxia/blob/master/database.json
+    atualizarRepositorio() // Verificar si necesita actualizar, consultando la api en https://github.com/jeffersonalionco/database-galaxia/blob/main/database.json
 
     let infoDataHora = new Date()
     let horasEminutosAtual = `${infoDataHora.getHours()}:${infoDataHora.getMinutes()}`
@@ -1632,7 +1632,7 @@ Tu ganaste:
 
     async function database_galaxia() {
         try {
-            let url = "https://raw.githubusercontent.com/jeffersonalionco/database-galaxia/master/database.json"
+            let url = "https://raw.githubusercontent.com/jeffersonalionco/database-galaxia/main/database.json"
             const response = await fetch(url); // Faz uma solicitação HTTP para a URL fornecida
             if (!response.ok) { // Verifica se a resposta da solicitação foi bem-sucedida
                 throw new Error('Error al obtener los datos: ' + response.statusText);

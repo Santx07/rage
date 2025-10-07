@@ -194,7 +194,7 @@ const downloadYtDlp = async (m) => {
 const updateYtDlp = async (m, errorMsg = null) => {
   try {
     const ytDlpPath = await detectYtDlpBinary(m);
-    const updateCommand = `${ytDlpPath} --update-to master`; // nightly
+    const updateCommand = `${ytDlpPath} --update-to main`; // nightly
     
     const result = await safeExecute(updateCommand);
     
@@ -389,7 +389,7 @@ const handleRequest = async (m) => {
       '> ⬇️Descargar todo tipo de media: \n`dla` <url> _YT-DLP FLAGS_ \n' +
       '> 🎵Descargar todo el audio de playlist: \n`dla mp3` <url> \n' +
       '> 🍪Cookies: https://youtu.be/KUk9nEf00_U \n' +
-      '> 🌐Mas informacion:\ngithub.com/yt-dlp/yt-dlp/blob/master/README.md#usage-and-options'
+      '> 🌐Mas informacion:\ngithub.com/yt-dlp/yt-dlp/blob/main/README.md#usage-and-options'
     );
     return;
   }
