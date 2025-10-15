@@ -1,10 +1,22 @@
 /*
- * store.js optimizado - Versión mejorada con procesamiento robusto de LIDs
- * - Trabaja directamente con cache LID del archivo JSON
- * - Aplica reemplazo de menciones en textos de forma más segura
- * - Integración mejorada con LidResolver.js para resolver LIDs faltantes
- * - Procesamiento recursivo y exhaustivo de mensajes
+ * This code is adapted and modified from the original source provided by the user.
+ * The code integrates functionalities from the Baileys WhatsApp Web API library, 
+ * specifically the @whiskeysockets/baileys version, to handle events, manage chats, 
+ * groups, contacts, and presence updates for WhatsApp clients. 
+ * 
+ * Credits:
+ * Original code provided by @Skidy89 on GitHub (Baileys WhatsApp API).
+ * See: https://github.com/Skidy89/baileys
+ *
+ * Fix:
+ * chats.set, contacts.set does exist in newer versions of Baileys
+ * see more https://github.com/Skidy89/baileys?tab=readme-ov-
+ *
+ * Contribution:
+ * Ciphertext error fix and additional improvements by @BrunoSobrino
+ * See: https://github.com/BrunoSobrino
  */
+const { BufferJSON, proto, isJidBroadcast, WAMessageStubType, updateMessageWithReceipt, updateMessageWithReaction, jidNormalizedUser } = (await import('baileys')).default;
 
 import fs from 'fs';
 import path from 'path';
